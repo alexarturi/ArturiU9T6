@@ -32,6 +32,13 @@ public class ShippingTest {
     // (there is a addMoreInsurance method for this purpose)
     double totalCost = 0;
 
+    for (ShippingItem item : itemList){
+      if (item instanceof InsuredShippingItem){
+        InsuredShippingItem temp = (InsuredShippingItem) item;
+        temp.addMoreInsurance(30);
+      }
+      totalCost += item.getCost();
+    }
 
     // add your code here
 
